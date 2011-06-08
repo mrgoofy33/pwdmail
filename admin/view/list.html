@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>メールアドレス管理</title>
+</head>
+<body>
+<h1>メールアドレス一覧</h1>
+
+> <a href="/admin/add">追加</a>
+<br><br>
+
+> <a href="/admin/send" onClick="if(confirm('本当に送信しますか？')){return true;}else{return false;}">テスト送信</a>
+<br><br>
+
+<table cellspacing="1" cellpadding="8" border="0" bgcolor="#999999">
+  <tr bgcolor="#EBEBEB">
+    <td>&nbsp;</td>
+    <td align="center">メールアドレス</td>
+    <td align="center">コメント</td>
+    <td align="center">ステータス</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  {% for mail in mails %}
+  <tr bgcolor="#FFFFFF">
+    <td><a href="/admin/view/{{ mail.key }}">詳細</a></td>
+    <td>{{ mail.email }}</td>
+    <td>{{ mail.comment }}</td>
+    <td align="center">{{ mail.status }}</td>
+    <td><a href="/admin/edit/{{ mail.key }}">編集</a></td>
+    <td><a href="/admin/delete/{{ mail.key }}" onClick="if(confirm('本当に削除しますか？')){return true;}else{return false;}">削除</a></td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>

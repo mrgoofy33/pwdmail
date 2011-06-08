@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>メールアドレス管理</title>
+</head>
+<body>
+<h1>新規登録</h1>
+> <a href="/admin/list">一覧</a><br><br>
+
+<form action="/admin/add" method="post">
+<table cellspacing="1" cellpadding="8" border="0" bgcolor="#999999">
+  <tr>
+    <td width="100" bgcolor="#EBEBEB">メールアドレス*<sup><font color="#FF0000">*</font></sup></td>
+    <td width="250" bgcolor="#FFFFFF"><input type="text" name="email" value=""></td>
+  </tr>
+  <tr>
+    <td bgcolor="#EBEBEB">コメント</td>
+    <td bgcolor="#FFFFFF"><textarea name="comment"></textarea></td>
+  </tr>
+  <tr>
+    <td bgcolor="#EBEBEB">ステータス*</td>
+    <td bgcolor="#FFFFFF">
+      <input type="radio" name="status" value="True">True 
+      <input type="radio" name="status" value="False">False
+    </td>
+  </tr>
+</table>
+<br>
+<input type="submit" value="追加する">
+</form>
+
+<br>
+<font color="#FF0000">*</font>は必須項目
+
+</body>
+</html>
+
